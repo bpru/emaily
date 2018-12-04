@@ -1,4 +1,16 @@
 const express = require("express");
+const mongoose = require("mongoose");
+
+const keys = require("./config/keys");
+
+// connect to mongoDB
+mongoose
+  .connect(
+    keys.mongoURL,
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log("MongoDB connected!"))
+  .catch(err => console.log(err));
 
 const app = express();
 
