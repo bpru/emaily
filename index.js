@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cookieSession = require('cookie-session');
+const cookieSession = require("cookie-session");
 const passport = require("passport");
 
 const keys = require("./config/keys");
@@ -14,8 +14,7 @@ require("./services/passport");
 // connect to mongoDB
 mongoose
   .connect(
-    // keys.mongoURL,
-    "mongodb://localhost:27017/emaily",
+    keys.mongoURL,
     { useNewUrlParser: true }
   )
   .then(() => console.log("MongoDB connected!"))
@@ -23,6 +22,7 @@ mongoose
 
 const app = express();
 
+// add middlewares for handling
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
