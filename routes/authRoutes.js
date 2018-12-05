@@ -13,4 +13,14 @@ module.exports = app => {
 
   // again, use passport to handle the callback GET request
   app.get("/auth/google/callback", passport.authenticate("google"));
+
+  app.get("/api/logout", (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+
+  // testing authentication. Should give back current user after login
+  app.get("/api/current_user", (req, res) => {
+    res.send(req.user);
+  });
 };
