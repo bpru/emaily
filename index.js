@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
 
@@ -22,6 +23,9 @@ mongoose
 
 const app = express();
 
+// parse incoming request body and store in req.body
+app.use(bodyParser.json());
+
 // add middlewares for handling
 app.use(
   cookieSession({
@@ -36,6 +40,7 @@ app.use(passport.session());
 
 // set up routes
 require("./routes/authRoutes")(app);
+require('./routes/billingRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 
