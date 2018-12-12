@@ -8,6 +8,11 @@ import "materialize-css/dist/css/materialize.min.css";
 import App from "./App";
 import reducers from "./reducers";
 
+// for testing
+// import axios from 'axios';
+// window.axios = axios;
+//
+
 const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 ReactDOM.render(
@@ -16,4 +21,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-

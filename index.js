@@ -6,8 +6,9 @@ const passport = require("passport");
 
 const keys = require("./config/keys");
 
-// set up user schema
+// set up schemas
 require("./models/User");
+require("./models/Survey");
 
 // set up passport for google authentication
 require("./services/passport");
@@ -41,6 +42,7 @@ app.use(passport.session());
 // set up routes
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets, like main.js or main.css
@@ -50,6 +52,7 @@ if (process.env.NODE_ENV === "production") {
   const path = require("path");
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    // The path.resolve() method resolves a sequence of paths or path segments into an absolute path.
   });
 }
 
