@@ -8,8 +8,10 @@ import "materialize-css/dist/css/materialize.min.css";
 import App from "./App";
 import reducers from "./reducers";
 
+import "./index.css";
+
 // for testing
-import axios from 'axios';
+import axios from "axios";
 window.axios = axios;
 //
 

@@ -22,7 +22,6 @@ class SurveyForm extends Component {
   render() {
     return (
       <div>
-        SurveyNew!
         <form
           onSubmit={this.props.handleSubmit(() => this.props.onSurveySubmit())}
         >
