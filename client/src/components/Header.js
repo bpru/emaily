@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
 import M from "materialize-css";
 
 import Payment from "./Payment";
