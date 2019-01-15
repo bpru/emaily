@@ -1,4 +1,4 @@
-##Auto-Emaily
+## Auto-Emaily
 
 This is a feedback collection website that allows users to sign in with their google account, purchase credits, create simple yes/no question, and send to a list of surveyees. Once the surveyees click either yes or no within their email, the dashboard page of the logged in user can see the updated statistics.
 
